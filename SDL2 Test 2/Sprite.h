@@ -4,6 +4,7 @@ class Sprite
 {
 public:
 	Sprite(SDL_Renderer *renderer, const char *filename, int width, int height);
+	~Sprite();
 	void draw();
 	void setX(int x);
 	void setY(int y);
