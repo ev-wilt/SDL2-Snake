@@ -15,10 +15,6 @@ Sprite::Sprite(SDL_Renderer *renderer, const char *filename, int width, int heig
 	}
 }
 
-Sprite::~Sprite() {
-	SDL_DestroyTexture(this->imageTexture);
-}
-
 void Sprite::draw() {
 	SDL_QueryTexture(this->imageTexture, NULL, NULL, NULL, NULL);
 	SDL_Rect textureRec = { this->x, this->y, this->width, this->height };
