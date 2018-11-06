@@ -10,9 +10,13 @@ public:
 	void setY(int y);
 	int getX();
 	int getY();
+	int getWidth();
+	int getHeight();
+	bool isCollidingWith(Sprite sprite);
 
 private:
 	SDL_Texture *imageTexture;
+	SDL_Rect textureRec;
 	SDL_Renderer *renderer;
 	int width;
 	int height;
