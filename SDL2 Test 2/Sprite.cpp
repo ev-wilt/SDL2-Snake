@@ -63,3 +63,7 @@ bool Sprite::isCollidingWith(Sprite sprite) {
 	}
 	return true;
 }
+
+SDL_Texture *Sprite::getTexture() {
+	return this->imageTexture;
+}

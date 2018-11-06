@@ -13,6 +13,7 @@ public:
 	int getWidth();
 	int getHeight();
 	bool isCollidingWith(Sprite sprite);
+	SDL_Texture *getTexture();
 
 private:
 	SDL_Texture *imageTexture;
