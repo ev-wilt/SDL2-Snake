@@ -37,6 +37,14 @@ int Sprite::getY() {
 	return this->y;
 }
 
+void Sprite::changeXBy(int dx) {
+	this->x += dx;
+}
+
+void Sprite::changeYBy(int dy) {
+	this->y += dy;
+}
+
 int Sprite::getWidth() {
 	return this->width;
 }

@@ -10,6 +10,8 @@ public:
 	void setY(int y);
 	int getX();
 	int getY();
+	void changeXBy(int dx);
+	void changeYBy(int dy);
 	int getWidth();
 	int getHeight();
 	bool isCollidingWith(Sprite sprite);

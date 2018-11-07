@@ -12,12 +12,16 @@ public:
 	~Snake();
 	void draw();
 	void update();
-	void checkInput(std::vector<SDL_Event> &events);
+	void checkInput(std::vector<SDL_Event> &events, unsigned short updateCounter);
 	bool ateFood(Food &food);
+	void increaseSize(SDL_Renderer *renderer);
+	bool isCollidingWith(Sprite &sprite);
+
 
 private:
 	std::vector<Sprite> snakeSegments;
 	Direction currentDirection;
 	bool stopped;
+	bool hasChangedDirection;
 };
 
