@@ -14,6 +14,7 @@ public:
 	void changeYBy(int dy);
 	int getWidth();
 	int getHeight();
+	void setAngle(double angle);
 	bool isCollidingWith(Sprite sprite);
 	SDL_Texture *getTexture();
 
@@ -24,4 +25,5 @@ private:
 	int height;
 	int x;
 	int y;
+	double angle;
 };

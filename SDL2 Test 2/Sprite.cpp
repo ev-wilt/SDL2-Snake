@@ -2,11 +2,13 @@
 #include "Sprite.h"
 #include <iostream>
 
+// Overloaded Constructor
 Sprite::Sprite(SDL_Renderer *renderer, const char *filename, int width, int height) :
 	x(0),
 	y(0),
 	width(width),
 	height(height),
+	angle(0),
 	renderer(renderer),
 	imageTexture(IMG_LoadTexture(renderer, filename))
 {
@@ -15,10 +17,11 @@ Sprite::Sprite(SDL_Renderer *renderer, const char *filename, int width, int heig
 	}
 }
 
+// Draws the texture to a rectangle with the current sprite attributes
 void Sprite::draw() {
 	SDL_QueryTexture(this->imageTexture, NULL, NULL, NULL, NULL);
 	SDL_Rect textureRec = { this->x, this->y, this->width, this->height };
-	SDL_RenderCopy(this->renderer, this->imageTexture, NULL, &textureRec);
+	SDL_RenderCopyEx(this->renderer, this->imageTexture, NULL, &textureRec, this->angle, NULL, SDL_FLIP_NONE);
 }
 
 void Sprite::setX(int x) {
@@ -53,6 +56,11 @@ int Sprite::getHeight() {
 	return this->height;
 }
 
+void Sprite::setAngle(double angle) {
+	this->angle = angle;
+}
+
+// Checks for a collision between this sprite and the sprite passed in
 bool Sprite::isCollidingWith(Sprite sprite) {
 	int left = this->x - (this->width / 2);
 	int right = this->x + (this->width / 2);
