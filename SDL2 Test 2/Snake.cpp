@@ -8,7 +8,7 @@ Snake::Snake(SDL_Renderer *renderer) :
 	snakeSegments(std::vector<Sprite>(3, Sprite(renderer, "assets/snake_segment.png", 50, 50))),
 	currentDirection(Direction::right),
 	stopped(true),
-	hasChangedDirection(false)
+	hasChangedDirection(false) 
 {
 	snakeSegments[0] = Sprite(renderer, "assets/snake_head.png", 50, 50);
 

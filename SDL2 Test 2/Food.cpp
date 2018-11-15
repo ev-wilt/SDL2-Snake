@@ -12,8 +12,7 @@ Food::Food(SDL_Renderer *renderer, const char *filename, int width, int height):
 }
 
 // Destructor
-Food::~Food()
-{
+Food::~Food() {
 	SDL_DestroyTexture(this->getTexture());
 }
 
